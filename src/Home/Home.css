@@ -1,7 +1,27 @@
+.home {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+}
+
+.home-row {
+    display: flex;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.top-row {
+    margin-top: 35px;
+}
+
 .home-image {
     width: 100%;
-    min-width: 1000px;
+    /* min-width: 1000px; */
     z-index: -1;
-    margin-bottom: -150px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.7));
+    margin-bottom: -50px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.4));
 }
+

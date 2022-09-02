@@ -11,20 +11,25 @@ function Home() {
           className='home-image'
           src="https://m.media-amazon.com/images/S/sonata-images-prod/ACQ_HO_T1/89aa0cfb-43bf-4651-afd5-9ce43a831060._UR3000,600_.jpeg" 
         />
-      
-        <div className='home-row'>
-          <Product/>
-          <Product/>
+        
+        <div className='home-row top-row'>
+          <Product
+            title="The Lean Startup"
+            image="https://m.media-amazon.com/images/I/51T-sMqSMiL._AC_SY780_.jpg"
+            price={29.99}
+            rating={3}
+          />
+          {/* <Product/> */}
         </div>
         
         <div className='home-row'>
-          {/* Product */}
-          {/* Product */}
-          {/* Product */}
+        {/* <Product />
+        <Product/>
+        <Product/> */}
         </div>
 
         <div className='home-row'>
-          {/* Product */}
+          {/* <Product/> */}
         </div>
       </div>
     </div>

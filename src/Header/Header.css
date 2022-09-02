@@ -92,6 +92,7 @@
 .header-nav {
     display: flex;
     justify-content: space-evenly;
+    padding-right: 18px;
 }
 
 .header-option {
