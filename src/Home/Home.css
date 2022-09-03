@@ -14,12 +14,13 @@
 }
 
 .top-row {
-    margin-top: 35px;
+    /* margin-top: 35px; */
 }
 
 .home-image {
     width: 100%;
-    /* min-width: 1000px; */
+    min-width: 1000px;
+    height: 600px;
     z-index: -1;
     margin-bottom: -50px;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.4));
