@@ -4,16 +4,24 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DehazeIcon from '@mui/icons-material/Dehaze';
+import { Link } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
 function Header() {
+
+  const [{basket}, dispatch] = useStateValue()
+
   return (
     <div className='header'>
       <div className='header-top'>
+      <Link to="/">
+      <img 
+        className='header-logo' 
+        src='https://pnggrid.com/wp-content/uploads/2021/05/Amazon-Logo-Transparent-1024x310.png'
+      />
+      </Link>
         <div className='header-left'>
-          <img 
-            className='header-logo' 
-            src='https://pnggrid.com/wp-content/uploads/2021/05/Amazon-Logo-Transparent-1024x310.png'
-          />
+          
           <div className='header-location'>
             <LocationOnIcon/>
             <div className='header-location-deliver' >
@@ -45,10 +53,14 @@ function Header() {
             <span className='header-optionLine2'> Prime</span>
           </div>
 
-          <div className="header-optionBasket">
-            <ShoppingCartIcon/>
-            <span className='header-optionLine2 header-basketCount'>0</span>
-          </div>
+
+          <Link to="/checkout">
+            <div className="header-optionBasket">
+              <ShoppingCartIcon/>
+              <span className='header-optionLine2 header-basketCount'>{basket.length}</span>
+            </div>
+          </Link>
+          
         </div>
 
       </div>
