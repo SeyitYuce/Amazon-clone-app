@@ -6,9 +6,11 @@ import Home from './Home/Home';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 import Checkout from './Checkout/Checkout';
+import Login from './Login/Login';
 
 
 
@@ -16,10 +18,16 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Header/>
+
+        <header>
+          <Header/>
+        </header>
+
         <Routes>
-          <Route path="/checkout" element={<Checkout/>}></Route>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/checkout" element={<Checkout/>}></Route>
+            <Route path="/" element={<Home/>}></Route>
         </Routes>
     </div>
     </Router>
