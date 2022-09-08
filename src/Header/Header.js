@@ -6,10 +6,17 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
+import { auth } from '../firebase';
 
 function Header() {
 
-  const [{basket}, dispatch] = useStateValue()
+  const [{basket, user}, dispatch] = useStateValue()
+
+  const handleAuthentication = () => {
+    if(user) {
+      auth.signOut()
+    }
+  }
 
   return (
     <div className='header'>
@@ -38,9 +45,9 @@ function Header() {
         </div>
   
         <div className='header-nav'>
-          <Link to="/login">
-            <div className="header-option">
-              <span className='header-optionLine1'> Hello, sign in</span>
+          <Link to={!user && "/login"}>
+            <div onClick={handleAuthentication} className="header-option">
+              <span className='header-optionLine1'> {user ? `Hello ${user.email}` : "Hello, sign in"}</span>
               <span className='header-optionLine2'> Accounts & Lists</span>
             </div>
           </Link>
