@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import "./index.css"
 import Header from './Header/Header';
@@ -15,6 +15,11 @@ import Login from './Login/Login';
 
 
 function App() {
+
+  useEffect(() => {
+    
+  }, [])
+
   return (
     <Router>
       <div className="App">
