@@ -12,6 +12,7 @@ import Checkout from './Checkout/Checkout';
 import Login from './Login/Login';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
+import Payment from './Payment/Payment';
 
 
 
@@ -53,8 +54,9 @@ function App() {
 
         <Routes>
           <Route path="/login" element={<Login/>}></Route>
-            <Route path="/login" element={<Login/>}></Route>
+            {/* <Route path="/login" element={<Login/>}></Route> */}
             <Route path="/checkout" element={<Checkout/>}></Route>
+            <Route path="/payment" element={<Payment />}></Route>
             <Route path="/" element={<Home/>}></Route>
         </Routes>
     </div>
