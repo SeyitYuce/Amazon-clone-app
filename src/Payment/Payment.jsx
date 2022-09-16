@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate  } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+// import { Link, useHistory } from 'react-router-dom'
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct'
 import { useStateValue } from '../StateProvider'
 import "./Payment.css"
@@ -24,6 +25,8 @@ function Payment() {
     const [error, setError] = useState(null)
     const [disabled, setDisabled] = useState(true)
     const [clientSecret, setClientSecret] = useState(true)
+//     const stringClientSecret = clientSecret.toString();
+
 
     useEffect(() => {
         const getClientSecret = async () => {
@@ -33,11 +36,13 @@ function Payment() {
             })
             setClientSecret(response.data.clientSecret)
         }
-            getClientSecret()
+        getClientSecret()
     }, [basket])
 
+    // console.log("the secret is  >>>", clientSecret)
+    // console.log('👱', user)
 
-    const handleSubmit = async event => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
         setProcessing(true)      
         
@@ -45,18 +50,20 @@ function Payment() {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
-        }).then(({paymentIntent}) =>{ 
+        }).then(({paymentIntent}) => { 
             setSucceeded(true)
             setError(null)
             setProcessing(false)
 
-            navigate("/orders")
+            // navigate("../orders", {replace: true})
+            navigate( "../orders", { replace:true })
         })
 
     }
+
     const handleChange = event => {
-        setError(event.empty)
-        setDisabled(event.error ? event.error.message : "")
+        setDisabled(event.empty)
+        setError(event.error ? event.error.message : "")
     }
 
 
